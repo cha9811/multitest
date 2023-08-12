@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- SQL문 정의할 때 VO표현을 간단하게 하고 싶은 경우. 
+     별명을 지어서 사용 -->
+   <typeAliases>
+   
+   <!-- 해당 부분의 type은 현재 파일의 위치를 가리키며 alias는 이를 뭐로 칭할지 사용된다 -->
+      <typeAlias type="com.mvc.wave.DTO.MDPostDTO" alias="mdPostDTO"></typeAlias>
+      <typeAlias type="com.mvc.wave.DTO.MDImgDTO" alias="mdImgDTO"></typeAlias>
+      <typeAlias type="com.mvc.wave.DTO.MDCommentDTO" alias="mdCommentDTO"></typeAlias>
+
+   </typeAliases>
+   
+   <mappers>
+   <!-- SQL문 정의하는 파일들의 목록을 지정. 테이블당 한개 사용 -->
+   <!-- 해당 부분은 mapper위치를 가리킨다. -->
+      <mapper resource="mapper/MDPostMapper.xml" />
+      <mapper resource="mapper/MDImgMapper.xml"/>
+      <mapper resource="mapper/MDCommentMapper.xml"/>
+   </mappers>
+</configuration>
